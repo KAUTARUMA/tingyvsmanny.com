@@ -1,0 +1,84 @@
+{
+  "name": "REDSTAR 3D",
+  "short_name": "REDSTAR 3D",
+  "id": "red.star3d",
+  "description": "FOR CHILDREN AND ADULTS",
+  "orientation": "any",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": [{
+        "src": "f8803b99e245666590e251b25a8bc04c4a3dbf9c1d28dd8007d1dd03c519d123-ios-icon-20.png.png",
+        "sizes": "20x20"
+      },{
+        "src": "85463e3879bc5aba9362096146682658d543b3bc3be8092999c6378c7beb0b81-ios-icon-29.png.png",
+        "sizes": "29x29"
+      },{
+        "src": "3c300ffdc74c2677bf47eeb46b270cb441e5ab80024ed607c9e4c062984575d5-android-icon-36.png.png",
+        "sizes": "36x36"
+      },{
+        "src": "4fdd7825dfaaed2ff0a84501a9f7622d2a1fd51b9d2e1ea5d7b177322f7ea6f3-ios-icon-40.png.png",
+        "sizes": "40x40"
+      },{
+        "src": "623e1d23254d9d8a8fa371dec2feeb08e2630c4f5a2a514b56201c43dca62d43-android-icon-48.png.png",
+        "sizes": "48x48"
+      },{
+        "src": "37e9b3264e36411fd1a2fb5671569915e0d3e419c285e61e3a06114898572b7e-ios-icon-50.png.png",
+        "sizes": "50x50"
+      },{
+        "src": "ab570d8c7b34c2daf3231acaa09b2285e50dc498b3337ceb84212d6db12bedcf-ios-icon-57.png.png",
+        "sizes": "57x57"
+      },{
+        "src": "ce21219e2cced47526c3b91168a88c19cb8f0ba7bbe0ce8c68a429acafacdbde-ios-icon-58.png.png",
+        "sizes": "58x58"
+      },{
+        "src": "e30008bffa760e368e52e0c8b405163982f7c7e7968958808612d622cf760152-ios-icon-60.png.png",
+        "sizes": "60x60"
+      },{
+        "src": "6439dd2ef8d6e276b898b3c56275e9083c7789b47a08ffd85505c969eeb60121-android-icon-72.png.png",
+        "sizes": "72x72"
+      },{
+        "src": "cf8a5dd99cf9b91bf153ed8f3645614f1dee2b62de5534f27d6ab2b001edc2f5-ios-icon-76.png.png",
+        "sizes": "76x76"
+      },{
+        "src": "6b499ad7f2ac443b1b43320fea5d93706da761b778997a02411ad0922174c80e-ios-icon-80.png.png",
+        "sizes": "80x80"
+      },{
+        "src": "b28e4afe7014b1445a2c50d0fde6db58e54caa37e91675a8cd5e828620b545bb-ios-icon-87.png.png",
+        "sizes": "87x87"
+      },{
+        "src": "37e6c559ee3f517fe5ccdd6d94f9eb96fd9fdfbacc39ea096e4bc6a16fe75ea1-android-icon-96.png.png",
+        "sizes": "96x96"
+      },{
+        "src": "f1275153685a9107b4c8d9cfdb45364aee3fb03cb5b006e24f9d155628ee890d-ios-icon-100.png.png",
+        "sizes": "100x100"
+      },{
+        "src": "26cc8721798caa42d794b29e3fac7a9cb86d181c061f114f11ce307aaa6f1b23-ios-icon-114.png.png",
+        "sizes": "114x114"
+      },{
+        "src": "0c504ddaa942ca5c0941b260859a7911f1d03e75e7a4a1fd621fc10901140b1a-ios-icon-120.png.png",
+        "sizes": "120x120"
+      },{
+        "src": "1fc970f020d8a357aaf02a7fa818de0f12560d091338f408bb9bf0f5c4dd5423-android-icon-144.png.png",
+        "sizes": "144x144"
+      },{
+        "src": "f5c9f8b36914dbbcd8908cc1c7ff042f8c4191f2a8039e8f1934c0e1ab7e49b2-ios-icon-152.png.png",
+        "sizes": "152x152"
+      },{
+        "src": "7d66f71b2ed998a67b0ae047f4b48a4d68e0682dbd05b3165cab2bec846d4bad-ios-icon-167.png.png",
+        "sizes": "167x167"
+      },{
+        "src": "e3d625109835d15637b2994438087a9992cc9002f3be8fd3331edfe0827cf852-ios-icon-180.png.png",
+        "sizes": "180x180"
+      },{
+        "src": "c42e1da10a2182c299d96b432fdccea977edec71c0a544205417a9e595c84d8a-android-icon-192.png.png",
+        "sizes": "192x192"
+      },{
+        "src": "17bc14d5fbf25852bb8c450d4783c622d18c191b1bcf760868497502310e2d70-desktop-icon-512.png.png",
+        "sizes": "512x512"
+      },{
+        "src": "f50af86260e212736cff793dbac5f2cce85729cdc0375db932867e3c526ad6e0-ios-icon-1024.png.png",
+        "sizes": "1024x1024"
+      }]
+}

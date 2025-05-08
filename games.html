@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Games</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .game-button {
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      background-color: white;
+      border: 2px solid #ccc;
+      padding: 16px;
+      width: 200px;
+      transition: transform 0.2s;
+      z-index: 1;
+    }
+
+    .game-button img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+
+    .game-button span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>GAMES</h1>
+
+  <a href="games/redstar/index.html" class="game-button" id="redstar">
+    <img src="games/redstar.png" alt="Red Star Game Icon">
+    <span>Red Star</span>
+  </a>
+
+  <a href="games/pokemon made by dorkly.zip" class="game-button" id="pokemon">
+    <img src="games/pokemon.jpg" alt="Pokemon Game Icon">
+    <span>Pokemon If It Was Realistic</span>
+  </a>
+
+  <script>
+    const buttons = [
+      {
+        el: document.getElementById('redstar'),
+        pos: { x: 0, y: 0 },
+        speed: { x: 2 + Math.random() * 2, y: 2 + Math.random() * 2 }
+      },
+      {
+        el: document.getElementById('pokemon'),
+        pos: { x: 0, y: 0 },
+        speed: { x: 2 + Math.random() * 2, y: 2 + Math.random() * 2 }
+      }
+    ];
+
+    let bounds = {
+      maxX: window.innerWidth,
+      maxY: window.innerHeight
+    };
+
+    function updateBounds() {
+      bounds.maxX = window.innerWidth;
+      bounds.maxY = window.innerHeight;
+    }
+
+    function initPositions() {
+      buttons.forEach(btn => {
+        const maxX = bounds.maxX - btn.el.offsetWidth;
+        const maxY = bounds.maxY - btn.el.offsetHeight;
+        btn.pos.x = Math.random() * maxX;
+        btn.pos.y = Math.random() * maxY;
+      });
+    }
+
+    function moveButtons() {
+      buttons.forEach(btn => {
+        const el = btn.el;
+        const w = el.offsetWidth;
+        const h = el.offsetHeight;
+
+        btn.pos.x += btn.speed.x;
+        btn.pos.y += btn.speed.y;
+
+        if (btn.pos.x <= 0 || btn.pos.x + w >= bounds.maxX) btn.speed.x *= -1;
+        if (btn.pos.y <= 0 || btn.pos.y + h >= bounds.maxY) btn.speed.y *= -1;
+
+        el.style.left = `${btn.pos.x}px`;
+        el.style.top = `${btn.pos.y}px`;
+      });
+
+      requestAnimationFrame(moveButtons);
+    }
+
+    window.addEventListener('load', () => {
+      updateBounds();
+      initPositions();
+      moveButtons();
+    });
+
+    window.addEventListener('resize', updateBounds);
+  </script>
+</body>
+</html>
