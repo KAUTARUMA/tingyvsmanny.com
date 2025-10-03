@@ -3,27 +3,177 @@
 @font-face { font-family: 'MPLUS Code Bold'; src: url('fonts/mplus_bold.ttf'); }
 @font-face { font-family: 'Boldonse Regular'; src: url('fonts/boldonse_regular.ttf'); }
 
+.corner {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    height: 25%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#corner-gif {
+    height: 100%;
+    transform-origin: bottom center;
+}
+
+#alert-box {
+    position: absolute;
+    bottom: 105%; /* above the GIF */
+    right: 0;
+    background: #ffc300;
+    outline-color: black;
+    outline-width: 1vh;
+    outline-style: outset;
+
+    color: rgb(0, 0, 0);
+    padding: 0.5vh 1vw;
+    border-radius: 10vh;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.2vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+#alert-box.animate {
+    animation: show-textbox 3s forwards;
+}
+
+@keyframes show-textbox {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 body {
     background: #54282b;
+    
+    background-image: url("shape.svg");
+    background-size: 5%;
+    background-repeat: repeat;
+
     text-align: center;
     margin: 0;
     padding: 0;
+    animation: background-scroll 160s linear infinite;
 }
 
-h1, h2, h3, p {
+@keyframes background-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+h1, h2, h3, h4, p {
     margin: 0;
 }
 
 h1 { font-family: 'Boldonse Regular'; color: #fff; }
 h2 { font-family: 'MPLUS Code Bold'; color: #fff; }
 h3 { font-family: 'MPLUS Code Bold'; color: #ffc300; }
-p  { font-family: 'Ubuntu Mono'; color: #ffffff60; }
+h4 { font-family: 'Ubuntu Mono'; color: #ffffffb7; font-weight: 100; font-size: larger; }
+p  { font-family: 'Ubuntu Mono'; color: #ffffff60; font-weight: 100; }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    gap: 24px;
+    background-color: #8a5258;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.header img {
+    max-width: 10%;
+}
+
+.header h1 {
+    font-size: 80px;
+}
+
+.sale {
+    background-color: #e42629;
+    padding: 16px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #e94649,
+        #e94649 10px,
+        #e42629 10px,
+        #e42629 20px
+    );
+    animation: sale-stripes-scroll 1s linear infinite;
+}
+
+@keyframes sale-stripes-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 28px 0;
+    }
+}
+
+.sale h2 {
+    text-shadow: 2px 2px 4px #0000007c;
+    font-family: 'Boldonse Regular';
+    font-size: large;
+    font-weight: 100;
+}
+
+.sale h1 {
+    text-shadow: 2px 2px 4px #0000007c;
+    animation: sale-rotate 2s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    animation-delay: -0.5s;
+}
+
+.sale h4 {
+    text-shadow: 2px 2px 4px #0000007c;
+    color: #ffffffd2;
+    mix-blend-mode: screen;
+}
+
+@keyframes sale-rotate {
+    0%, 100% { rotate: -0.5deg; }
+    50% { rotate: 0.5deg; }
+}
+
+.aboutDiv {
+    background-color: #b1761f;
+    border-radius: 50px;
+    max-width: 800px;
+    min-width: 350px;
+    width: calc(50vw);
+    aspect-ratio: 16/5;
+    margin: auto;
+    padding: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 70px;
+}
 
 .tierDivHolder { margin: 0 10%; }
 
 .tierDiv, .insideTierDiv, .imageInsideTierDiv {
     border-radius: 20px;
     padding: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .tierDiv {
@@ -66,8 +216,7 @@ p  { font-family: 'Ubuntu Mono'; color: #ffffff60; }
     background: #8a5258;
 }
 
-.imageInsideTierDiv img,
-.imageInsideTierDiv image {
+.imageInsideTierDiv img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -105,4 +254,32 @@ p  { font-family: 'Ubuntu Mono'; color: #ffffff60; }
     font-size: x-large;
     text-align: center;
     vertical-align: middle;
+}
+
+.footer {
+    background-color: #434549;
+
+    background-image: url("heart.svg");
+    background-size: 5%;
+    background-repeat: repeat;
+
+    animation: background-heart-scroll 360s linear infinite;
+}
+
+@keyframes background-heart-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+.footerContent {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.footer h1 {
+    text-align: left;
 }

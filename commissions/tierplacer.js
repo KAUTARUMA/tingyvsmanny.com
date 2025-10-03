@@ -21,25 +21,27 @@ fetch('/examples/commdata.json')
       insideDiv.className = "insideTierDiv";
 
       if (tier.images) {
-        tier.images.forEach(src => {
-          const imgDiv = document.createElement("div");
-          imgDiv.className = "imageInsideTierDiv";
-          const img = document.createElement("img");
-          img.src = "examples/" + src;
-          img.width = "100";
+            tier.images.forEach(src => {
+                const imgDiv = document.createElement("div");
+                
+                imgDiv.className = "imageInsideTierDiv";
+                const img = document.createElement("img");
+                img.src = "examples/" + src;
+                img.width = "100";
 
-          img.alt = `${tier.name} example`;
-          img.loading = 'lazy';
+                img.alt = `${tier.name} example`;
+                img.loading = 'lazy';
 
-          const link = document.createElement("a");
-          link.href = img.src;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.title = "Open image in new tab";
-          link.appendChild(img);
-          imgDiv.appendChild(link);
-          insideDiv.appendChild(imgDiv);
-        });
+                const link = document.createElement("a");
+                link.href = img.src;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.title = "Open image in new tab";
+                
+                link.appendChild(img);
+                imgDiv.appendChild(link);
+                insideDiv.appendChild(imgDiv);
+            });
       }
 
       thImages.appendChild(insideDiv);

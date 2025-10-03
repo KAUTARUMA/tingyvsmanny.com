@@ -7,16 +7,126 @@
     </head>
 <body>
 
-<div style="background-color:#8a5258; margin:0px;">
-    <h1 align=right size=500px>Commissions</h1>
+<div class="corner">
+    <img id="corner-gif" src="sitter.gif">
+    <div id="alert-box">testingggwwwwwwwwwwwwwwww</div>
+    <script src="myson.js"></script>
 </div>
 
-<h1>TIERS</h1>
+<div class="header">
+    <!--<img src="icon.jpg">-->
+    <h1>Commissions</h1>
+</div>
+
+<div class="sale">
+    <h2 class="wavy-text">SALE!&ensp;SALE!&ensp;SAAAALE!!!</h2>
+    <style>
+    .wavy-text {
+        display: inline-block;
+        font-size: 2em;
+        letter-spacing: 2px;
+        position: relative;
+    }
+    .wavy-text span {
+        display: inline-block;
+        animation: wave-char 1.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+        animation-fill-mode: both;
+    }
+    @keyframes wave-char {
+        0%, 100% { transform: translateY(-5px); }
+        50% { transform: translateY(5px); }
+    }
+    </style>
+    <script>
+    const wavy = document.querySelector('.wavy-text');
+    if (wavy && !wavy.dataset.wavy) {
+        wavy.dataset.wavy = "1";
+        const text = wavy.textContent;
+        wavy.innerHTML = '';
+        for (let i = 0; i < text.length; i++) {
+            const span = document.createElement('span');
+            span.textContent = text[i];
+            span.style.animationDelay = (-1.5 + i * 0.07) + 's';
+            wavy.appendChild(span);
+        }
+    }
+    </script>
+    
+    <h1>!!! 20% OFF ALL ORDERS WITH MORE THAN 1 ITEM !!!</h1>
+    <h4>(With a limit of up to 100$USD off)</h4>
+</div>
+
+<br>
+
+<div class="aboutDiv">
+    <h1>Hello!  (o ゜▽ ゜)o☆</h1>
+    <h4>
+        I'm KAUTARUMA, a queer freelance style mimic artist &lt;3<br>
+        I can mimic almost any vector-adjacent artstyle!<br>
+        Telegram Stickers, Skype &amp; Discord emojis...<br>
+        you name it, i can do it! ( •̀ ω •́ )✧
+        <br><br>
+        I also do programming!<br>
+        If that's something you're interested in commissioning<br>
+        you can also contact me for that. c:
+    </h4>
+    <br>
+    <p>Note: I am not currently looking for any full time work.</p>
+</div>
+
+<br>
+
+<h1 class="title">TIERS</h1>
 <p>Price varies depending on style &amp; complexity, contact me for exact prices.</p>
 <br>
 
 <div id="tiersContainer"></div>
-
 <script type="module" src="tierplacer.js"></script>
+
+<div class="footer">
+    <div class="footerContent">
+        <br>
+        <br>
+        <h1>I Accept:</h1>
+        <img src="payments.png">
+        <br>
+        <h1>Contact Me:</h1>
+        <a href="https://bsky.app/profile/did:plc:7kfsgjcjvhceuy334jrrfduz" target="#">
+            <img src="contact_bluesky.png" alt="Bluesky">
+        </a>
+        <a href="https://discordapp.com/users/1171524613751197816" target="#">
+            <img src="contact_discord.png" alt="Discord">
+        </a>
+        <div style="clear:both;"></div>
+        <h4>^ clickable! ^</h4>
+        <br>
+        <p>Each icon estimated to have a turnaround time of 1-5 business days depending on complexity & order backlog.<br>
+        I will usually only work on commissions during the week (mon - fri)<br>
+        I can also accept art trades situationally.</p>
+        <br>
+    </div>
+</div>
+
+<script>
+function setSpikyFooter(selector, spikeCount = 10, spikeHeight = 20) {
+    const footer = document.querySelector(selector);
+    if (!footer) return;
+
+    const points = [];
+    const step = 100 / spikeCount;
+
+    for (let i = 0; i <= spikeCount; i++) {
+        const x = step * i;
+        const y = i % 2 === 0 ? spikeHeight : 0;
+        points.push(`${x}% ${y}vw`);
+    }
+
+    points.push(`100% 100%`, `0% 100%`);
+
+    footer.style.clipPath = `polygon(${points.join(', ')})`;
+}
+
+setSpikyFooter('.footer', 50, 2);
+</script>
 </body>
 </html>
