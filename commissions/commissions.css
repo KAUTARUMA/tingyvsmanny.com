@@ -19,7 +19,7 @@
 
 #alert-box {
     position: absolute;
-    bottom: 105%; /* above the GIF */
+    bottom: 105%;
     right: 0;
     background: #ffc300;
     outline-color: black;
